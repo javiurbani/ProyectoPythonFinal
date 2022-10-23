@@ -142,22 +142,22 @@ def contraConfirmada(request):
 class ListaArticulo(ListView):
 
     model = Articulo
-    template_name = "articulo_list.html"
+    template_name = "AppMascota/articulo_list.html"
 
 
 class DetalleArticulo(LoginRequiredMixin, DetailView):
 
     model = Articulo
-    login_url = "login.html"
-    template_name = "articulo_detail.html"
+    login_url = "AppMascota/login.html"
+    template_name = "AppMascota/articulo_detail.html"
 
 
 class CrearArticulo(LoginRequiredMixin, CreateView):
 
     model = Articulo
     success_url = "/AppMascota/articulo/list/"
-    login_url = "login.html"
-    template_name = "articulo_form.html"
+    login_url = "AppMascota/login.html"
+    template_name = "AppMascota/articulo_form.html"
     fields = "__all__"
     
 
@@ -165,7 +165,7 @@ class EditarArticulo(LoginRequiredMixin, UpdateView):
 
     model= Articulo
     success_url = "/AppMascota/articulo/list/" 
-    login_url = "login.html"
+    login_url = "AppMascota/login.html"
     fields = "__all__"
 
 
@@ -173,8 +173,8 @@ class BorrarArticulo(LoginRequiredMixin, DeleteView):
 
     model= Articulo
     success_url = "/AppMascota/articulo/list"
-    login_url = "login.html"
-    template_name = "articulo_confirm_delete.html"
+    login_url = "AppMascota/login.html"
+    template_name = "AppMascota/articulo_confirm_delete.html"
 
 
 
