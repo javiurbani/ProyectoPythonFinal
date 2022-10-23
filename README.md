@@ -27,7 +27,8 @@ Login en caso de haber cerrado sesión
 Acceder al whatsapp de la tienda
 Editar y eliminar instrumentos musicales solo permitido a quién lo creó
 
-Ver archivo titulado "Pruebas Proyecto Python CH.xlsx" el cual se encuentra en el presente repositorio https://github.com/johannesgperez/ProyectoFinalMain.git
+PRUEBAS
+El archivo "Documentación de Pruebas.xlsx" se encuentra en el repositorio.
 
 *VÍDEO DEMOSTRACIÓN
 
