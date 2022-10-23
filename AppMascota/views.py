@@ -17,7 +17,7 @@ from django.urls import reverse_lazy
 
 def inicio(request):
 
-    return render(request, 'inicio.html')
+    return render(request, 'AppMascota/inicio.html')
 
 #Login y Logout
 
@@ -88,7 +88,7 @@ def editarUser(request):
             usuario.last_name = info["apellido"]
             usuario.save()
 
-            return render(request, "inicio.html")
+            return render(request, "AppMascota/inicio.html")
     
     else:
 
@@ -98,7 +98,7 @@ def editarUser(request):
             "apellido":usuario.last_name,
             })
 
-    return render(request, "editarPerfil.html", {"form":form, "usuario":usuario})
+    return render(request, "AppMascota/editarPerfil.html", {"form":form, "usuario":usuario})
 
 
 @login_required
@@ -116,13 +116,13 @@ def avatarAgregar(request):
 
             avatar.save()
 
-            return render(request, "inicio.html")
+            return render(request, "AppMascota/inicio.html")
     
     else:
 
         form = FormularioAvatar()
     
-    return render(request, "agregarAvatar.html", {"formulario":form})
+    return render(request, "AppMascota/agregarAvatar.html", {"formulario":form})
 
 class CambioPassword(PasswordChangeView):
 
@@ -180,25 +180,25 @@ class BorrarArticulo(LoginRequiredMixin, DeleteView):
 
 def about(request):
 
-    return render(request, "about.html")
+    return render(request, "AppMascota/about.html")
 
 
 def sitioConst(request):
 
-    return render(request, "enConstruccion.html")
+    return render(request, "AppMascota/enConstruccion.html")
 
 
 
 def datosContact(request):
 
-    return render(request, "contactod.html")
+    return render(request, "AppMascota/contactod.html")
 
 
 def tarjeta(request):
 
-    return render(request, "pago.html")
+    return render(request, "AppMascota/pago.html")
 
 def mje(request):
 
-    return render(request, "mensaje.html")
+    return render(request, "AppMascota/mensaje.html")
 
