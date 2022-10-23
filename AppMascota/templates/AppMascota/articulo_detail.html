@@ -1,0 +1,30 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block feature %}
+<body>
+   
+    <p>Nombre: {{articulo.nombre}}</p>
+    <p>Mascota: {{articulo.animal}}</p>
+    <p>Categoria: {{articulo.categoria}}</p>
+    <p>Precio: {{articulo.precio}}</p>
+    <p>Fecha de creación: {{articulo.fecha}}</p>
+    <p>Autor: {{articulo.autor}}</p>
+
+    <button>
+        <a href="{% url 'NoHaySitio' %}">Comprar $</a>
+    </button>
+
+    {% if articulo.imagen %}
+    <p>
+        <img src="{{articulo.imagen.url}}" style="max-width: 500px; max-height: 500px;">
+    </p>
+    {% endif %}
+    
+   
+
+
+    
+    
+</body>
+{% endblock %}

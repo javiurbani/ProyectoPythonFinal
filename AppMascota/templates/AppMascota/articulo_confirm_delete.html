@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block feature %}
+<body>
+    <form action="" method="POST"> {% csrf_token %}
+
+        <p>¿Estás seguro que deseas borrar este artículo?</p>
+
+        <input type="submit" name="Borrar">
+
+        <p>
+            <button>
+                <a href="{% url 'ArticuloLeer' %}">Regresar</a>
+            </button>
+            </p>
+           
+
+
+    </form>
+    
+</body>
+{% endblock %}

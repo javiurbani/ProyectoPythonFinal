@@ -1,0 +1,72 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block feature%}
+<form action="#" class="credit-card-div">
+    <div class="panel panel-default" >
+     <div class="panel-heading">
+         
+          <div class="row ">
+                  <div class="col-md-12">
+                    <br>
+                      <input type="text" class="form-control" placeholder="Número de tarjeta" required/>
+                  </div>
+              </div>
+              <br>
+         <div class="row ">
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                      <span class="help-block text-muted small-font" > Mes expiración</span><br>
+
+                      <input type="text" class="form-control" placeholder="MM" required/>
+                  </div>
+             <div class="col-md-3 col-sm-3 col-xs-3">
+                      <span class="help-block text-muted small-font" >  Año expiración </span>
+                      <input type="text" class="form-control" placeholder="YY" required/>
+                  </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                      <span class="help-block text-muted small-font" >  CCV</span>
+                      <input type="text" class="form-control" placeholder="CCV" />
+                  </div>
+             <div class="col-md-3 col-sm-3 col-xs-3">
+    <img src="{% static 'img/tarjeta.png' %}" class="img-rounded" style="max-height:100px; max-width100px:" />
+             </div>
+              </div>
+         <div class="row ">
+                  <div class="col-md-12 pad-adjust">
+    
+                      <input type="text" class="form-control" placeholder="Titular de la tarjeta" required/><br>
+
+                  </div>
+              </div>
+            </div>
+
+            
+            <div class="row ">
+                     <div class="col-md-12 pad-adjust">
+       
+                         <input type="text" class="form-control" placeholder="Número de DNI" required/><br>
+
+                     </div>
+                 </div>
+         <div class="row">
+    <div class="col-md-12 pad-adjust">
+        <div class="checkbox">
+        <label>
+          <input type="checkbox" checked class="text-muted"> Guardar información <a href="#"></a>
+        </label>
+      </div>
+    </div>
+         </div>
+           <div class="row ">
+                <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                     <input type="submit"  class="btn btn-danger" value="CANCELAR" />
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                      <input type="submit"  class="btn btn-warning btn-block" value="PAGAR" />
+                  </div>
+              </div>
+         
+                       </div>
+                  </div>
+    </form>
+{% endblock %}

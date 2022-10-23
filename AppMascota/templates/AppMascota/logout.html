@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1>Sesión terminada.</h1>
+{% endblock %}
+
+
+{% block feature %}
+<button>
+    <a class="btn btn-outline-light btn-lg px-3" href="{% url 'Home' %}" style="color: black;">Regresar a la página principal.</a>
+
+</button>
+{% endblock %}
+
+

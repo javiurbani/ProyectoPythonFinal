@@ -1,0 +1,52 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block feature %}
+
+<body>
+
+    {% for article in object_list %}
+
+    <p>Nombre: {{article.nombre}}</p>
+    <p>Animal: {{article.animal}}</p>
+        {% if article.imagen %}
+        <img src="{{article.imagen.url}}" style="max-width: 150px; max-height: 150px;"></p>
+        {% endif %}
+
+            {% if request.user.is_authenticated %}
+            <button>
+                <a href="{% url 'ArticuloDetalle' article.id %}">Ver detalle</a>
+            </button>
+                {% if user.id == article.autor.id or request.user.is_superuser %}
+        
+                <button>
+                    <a href="{% url 'ArticuloEditar' article.id %}">Editar</a>
+                </button>
+                <button>
+                    <a href="{% url 'ArticuloBorrar' article.id %}">Borrar</a>
+                </button>
+                {% endif %}
+
+            {% endif %}
+
+    <p>
+    ---------------------------------
+    </p>
+    {% endfor %}
+
+    {% if request.user.is_authenticated %}
+        <p>
+        <button>
+            <a href="{% url 'ArticuloCrear' %}">¿Quieres crear un artículo?</a>
+        </button>
+        </p>
+    {% else %}
+    <p>
+        <button>
+            <a href="{% url 'Login' %}">¿Quieres crear un artículo?</a>
+        </button>
+        </p>
+    {% endif %}
+
+</body>
+{% endblock %}

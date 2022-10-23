@@ -1,0 +1,73 @@
+{% extends 'AppMascota/padre.html' %}
+{% load static %}
+
+{% block feature %}
+
+<br>
+<br>
+
+
+    <div class="container">
+       <h2 class="text-center text-dark">
+           Acerca de Mi
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'img/javiurbani.png' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Javier Urbani</h3>
+                    <p class="card-text">Consultor de sistemas.</p>
+                    <p class="card-text">Sigueme en:</p>
+                    <a href="https://github.com/javiurbani"><i class="bi bi-github text-dark mx-1"></i></a>
+                    <a href="https://www.linkedin.com/in/javierurbani/"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center">
+                    <p>Hola que tal! Mi nombre es Javier y actualmente trabajo como implementador de sistemas, empecé hace poco en el ambiente IT, lo cuál me entusiasma cada vez más. Actualmente estoy aprendiendo el lenguaje de programación Python y el Framework Django. Gracias por visitar mi página y no dejes de seguirme en mis redes sociales :)</p>
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <h2 class="text-center text-dark">
+            
+        </h2>
+        <br>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-success">
+                     <div class="card-body text-center">
+                         <img src="{% static 'img/ivancastelan.jpg' %}" class="rounded-circle mb-3" width="150px">
+                     <h3 class="card-title mb-3">Ivan Castelan</h3>
+                     <p class="card-text">Asistente técnico.</p>
+                     <p class="card-text">Sigueme en:</p>
+                     <a href="https://github.com/ivancastelan"><i class="bi bi-github text-dark mx-1"></i></a>          
+                     </div>
+                </div>
+            </div>
+            <div class="col">
+             <div class="">
+                  <div class="text-center">
+                     <p>¡Hola! Mi nombre es Ivan Castelan y trabajo como asistente técnico en una academia de lenguas internacional. Recién empiezo en el mundo de la programación con Python + Django, lenguaje que busco profundizar además de aprender nuevas herramientas y lenguajes. ¡Saludos!</p>
+                  </div>
+             </div>
+         </div>
+        </div>
+     </div>
+     <br>
+     <br>
+     <br>
+     <br>
+
+{% endblock %}

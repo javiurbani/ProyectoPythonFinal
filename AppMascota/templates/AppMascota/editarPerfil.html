@@ -1,0 +1,26 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1>Edita tu usuario.</h1>
+{% endblock %}
+
+
+{% block feature %}
+
+<form action="" method="POST"> {% csrf_token %}
+        
+
+    {{form.as_p}}
+
+    
+    <button type="submit">Confirmar</button>
+
+    {{mensaje2}}
+   
+    
+</form>
+
+{% endblock %}
+
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Tienda de mascotas</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'AppMascota/assets/favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppMascota/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url 'Home' %}">HUELLAS</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                           
+                            
+                            <li class="nav-item"><a class="nav-link" href="{% url 'SobreMi' %}">About</a></li>
+
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{user.first_name}}
+
+                                    {% with  user.avatar_set.last as profilePic %} 
+                                   
+                                    {% if profilePic %}
+
+                                    <img src="{{profilePic.imagen.url}}" alt="" style="max-width: 25px; max-height: 25px; border-radius: 50%; vertical-align: middle;">
+
+                                    {% endif %}
+                                    
+                                    {% endwith %}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="{% url 'EditarUsuario' %}">Editar usuario</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'PasswordContra' %}">Cambiar contraseña</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'Avatar' %}">Cambiar avatar</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'Logout' %}">Cerrar sesión</a></li>
+                                    
+                                </ul>
+                            </li>
+
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Registro' %}">Regístrate</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}">Iniciar sesión</a></li>
+
+                            {% endif %}
+
+                           
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+           {% block titulo %}
+
+           {% endblock %}
+            <!-- Features section-->
+
+           {% block feature %}
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">¿Qué puedes encontrar aquí?</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <h2 class="h5">Comida</h2>
+                                    <p class="mb-0">Croquetas y premios de la mejor calidad del mercado.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                    <h2 class="h5">Juguetes</h2>
+                                    <p class="mb-0">Gran variedad de juguetes para perros y gatos. ¡Nunca se aburrirán!</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">Accesorios</h2>
+                                    <p class="mb-0">Correas, collares, platos y más.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">Para el cuidado</h2>
+                                    <p class="mb-0">Consiéntelos y cuídalos con los mejores productos que hay.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           {% endblock %}
+
+            <!-- Testimonial section-->
+
+            <!-- Blog preview section-->
+            {% block top %}
+
+        {% endblock %}
+
+<br>
+
+
+<img class="btn-whatsapp" src="https://clientes.dongee.com/whatsapp.png" width="64" height="64" alt="Whatsapp" onclick="window.location.href='https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20tu%20servicio'"><br>
+<br>
+
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Huellas 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="{% url 'NoHaySitio' %}">Privacidad</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="{% url 'NoHaySitio' %}">Términos</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="{% url 'Sitio' %}">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

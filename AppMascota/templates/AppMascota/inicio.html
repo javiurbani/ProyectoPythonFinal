@@ -1,0 +1,175 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block titulo %}
+{{mensaje2}}
+<header class="bg-dark py-5">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5 text-center text-xl-start">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido a Huellas.</h1>
+                    
+                    <p class="lead fw-normal text-white-50 mb-4">La tienda de accesorios y productos para mascotas más grande de Latinoamérica.</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+
+                        {% if request.user.is_authenticated %}
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'ArticuloLeer' %}">Artículos</a>
+
+                        {% else %}
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'ArticuloLeer' %}">Artículos</a>
+                        <a class="btn btn-outline-light btn-lg px-4" href="{% url 'Login' %}">Iniciar sesión</a>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{% static 'img/gatoperro.jpg' %}" alt="..." /></div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}
+
+{% block feature %}
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">¿Qué puedes encontrar aquí?</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <img class="card-img-top" src="{% static 'img/b.png' %}" alt="" style="max-width: 65px; max-height: 65px;"/> 
+                        <h2 class="h5">Comida</h2>
+                        <p class="mb-0">Croquetas y premios de la mejor calidad del mercado.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <img class="card-img-top" src="{% static 'img/a.png' %}" alt="" style="max-width: 65px; max-height: 65px;"/> 
+                        <h2 class="h5">Juguetes</h2>
+                        <p class="mb-0">Gran variedad de juguetes para perros y gatos. ¡Nunca se aburrirán!</p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <img class="card-img-top" src="{% static 'img/c.png' %}" alt="" style="max-width: 65px; max-height: 65px;"/> 
+                        <h2 class="h5">Accesorios</h2>
+                        <p class="mb-0">Correas, collares, platos y más.</p>
+                    </div>
+                    <div class="col h-100">
+                        <img class="card-img-top" src="{% static 'img/d.png' %}" alt="" style="max-width: 65px; max-height: 65px;"/> 
+                        <h2 class="h5">Para el cuidado</h2>
+                        <p class="mb-0">Consiéntelos y cuídalos con los mejores productos que hay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block top %}
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <h2 class="fw-bolder">Más populares:</h2>
+                                <p class="lead fw-normal text-muted mb-5">Top 3 de productos más vendidos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="{% static 'img/shampoo.jpg' %}" alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">#1</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{% url 'pago' %}"><h5 class="card-title mb-3">OSSPRET DOUBLE 2 EN 1, PULGUICIDA Y GARRAPATICIDA X 250</h5></a>
+                                    <p class="card-text mb-0">$750</p><br>
+                                    <p class="card-text mb-0">Tradicional
+
+                                        Osspret Shampoo Tradicional con Glicerina Antiparasitario Externo.
+                                        
+                                        Sólo para caninos mayores de 6 meses.
+                                        
+                                        Adecuada acción residual.
+                                        
+                                        Humectante
+                                        
+                                        Pulguicida
+                                        
+                                        Garrapaticida
+                                        
+                                        Piojicida..</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'pago' %}">COMPRAR</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="{% static 'img/juguete.jpg' %}" alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">#2</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{% url 'pago' %}"><h5 class="card-title mb-3">COMBO JUGUETES PARA GATOS</h5></a>
+                                    <p class="card-text mb-0">$2500</p><br>
+                                    Combo 2 juegos/ejercicios/entretenimiento para tu gato.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'pago' %}">COMPRAR</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="{% static 'img/peine.jpg' %}"  alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">#3</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{% url 'pago' %}"><h5 class="card-title mb-3">BluePet® peine para gatos y perros de pelo corto</h5></a>
+                                    <p class="card-text mb-0">$1800</p><br>
+
+                                    <p class="card-text mb-0">Ayude a su perro, gato o caballo a cambiar su pelaje.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'pago' %}">COMPRAR</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Call to action-->
+                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                            <div class="mb-4 mb-xl-0">
+                                <div class="fs-3 fw-bold text-white">Suscríbete.</div>
+                                <div class="text-white-50">Si estás interesado en nuestros productos, puedes inscribirte en nuestro boletin</div>
+                            </div>
+                            <div class="ms-xl-4">
+                                <div class="input-group mb-2">
+                                    <input class="form-control" type="text" placeholder="Tu correo..." aria-label="Email address..." aria-describedby="button-newsletter" />
+                                    <button class="btn btn-outline-light" id="button-newsletter" type="button" href="{% url 'NoHaySitio' %}">Enviar</a>
+                                </div>
+                                <div class="small text-white-50"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
+        {% endblock %}

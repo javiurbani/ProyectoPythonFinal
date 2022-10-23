@@ -1,0 +1,28 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1>Inicia sesión:</h1>
+{% endblock %}
+
+
+{% block feature %}
+<body>
+    
+    <form action="" method="POST"> {% csrf_token %}
+        
+
+        {{formulario.as_p}}
+
+        
+        <button type="submit">Iniciar Sesión</button>
+
+        {{mensaje2}}
+       
+        
+    </form>
+
+</body>
+{% endblock %}
+
+
