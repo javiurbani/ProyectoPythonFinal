@@ -27,8 +27,11 @@ Login en caso de haber cerrado sesión
 Acceder al whatsapp de la tienda
 Editar y eliminar instrumentos musicales solo permitido a quién lo creó
 
-PRUEBAS
+PRUEBAS -
 El archivo "Documentación de Pruebas.xlsx" se encuentra en el repositorio.
+
+LINK A PYTHONANYWHERE:
+http://ivancastelan.pythonanywhere.com/AppMascota/
 
 *VÍDEO DEMOSTRACIÓN
 
