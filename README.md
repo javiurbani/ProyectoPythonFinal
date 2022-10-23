@@ -1,4 +1,4 @@
-*PROYECTO FINAL DE PYTHON plataforma Coder House
+*PROYECTO FINAL DE PYTHON plataforma Coder House*
 
 *COMISIÓN: 41635
 
@@ -18,8 +18,8 @@ Para poder navegar por las diferentes secciones dentro del sitio, él usuario de
 
 *LOS USUARIOS PUEDEN REALIZAR LAS SIGUIENTES ACCIONES:
 
-Publicar articulos con datos e imagen del mismo
-Visualizar articulos publicados
+Publicar artículos con datos e imagen del mismo
+Visualizar artículos publicados
 Editar el Usuario
 Cambiar la contraseña del mismo
 Cerrar Sesión
