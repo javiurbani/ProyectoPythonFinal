@@ -36,4 +36,4 @@ http://ivancastelan.pythonanywhere.com/AppMascota/
 
 *VÍDEO DEMOSTRACIÓN
 
-](https://www.youtube.com/watch?v=gzs6tK8gmEI)
+https://www.youtube.com/watch?v=gzs6tK8gmEI
